@@ -1,0 +1,23 @@
+# A TOML plugin for restate:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "restate-server"
+type = "cli"
+archs = ["macos", "linux"]
+
+[resolve]
+git-url = "https://github.com/restatedev/restate"
+
+[platform.linux]
+download-file = "restate-server-{arch}-unknown-linux-musl.tar.xz"
+checksum-file = "restate-server-{arch}-unknown-linux-musl.tar.xz.sha256"
+exe-path = "restate-server-{arch}-unknown-linux-musl/restate-server"
+
+[platform.macos]
+download-file = "restate-server-{arch}-apple-darwin.tar.xz"
+checksum-file = "restate-server-{arch}-apple-darwin.tar.xz.sha256"
+exe-path = "restate-server-{arch}-apple-darwin/restate-server"
+
+[install]
+download-url = "https://github.com/restatedev/restate/releases/download/v{version}/{download_file}"
+checksum-url = "https://github.com/restatedev/restate/releases/download/v{version}/{checksum_file}"
