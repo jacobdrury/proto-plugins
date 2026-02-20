@@ -21,3 +21,6 @@ exe-path = "restate-server-{arch}-apple-darwin/restate-server"
 [install]
 download-url = "https://github.com/restatedev/restate/releases/download/v{version}/{download_file}"
 checksum-url = "https://github.com/restatedev/restate/releases/download/v{version}/{checksum_file}"
+
+[install.arch]
+arm64 = "aarch64"
